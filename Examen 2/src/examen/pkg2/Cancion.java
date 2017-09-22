@@ -6,11 +6,11 @@ public class Cancion implements Serializable{
 
     private String nombre;
     private String artista;
-    private int duracion;
+    private long duracion;
     private String genero;
     private static final long SerialVersionUID = 4224;
 
-    public Cancion(String nombre, String artista, int duracion, String genero) {
+    public Cancion(String nombre, String artista, long duracion, String genero) {
         this.nombre = nombre;
         this.artista = artista;
         this.duracion = duracion;
@@ -33,11 +33,11 @@ public class Cancion implements Serializable{
         this.artista = artista;
     }
 
-    public int getDuracion() {
+    public long getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(int duracion) {
+    public void setDuracion(long duracion) {
         this.duracion = duracion;
     }
 
