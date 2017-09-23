@@ -47,6 +47,6 @@ public class hilo extends Thread{
             }
             tiempo.setText(cancion.getDuracion()+"");
         }
-        JOptionPane.showMessageDialog(submenu, "Termino");
+        JOptionPane.showMessageDialog(null, "Termino");
     }
 }
