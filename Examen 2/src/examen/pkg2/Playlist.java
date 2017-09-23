@@ -9,7 +9,8 @@ public class Playlist implements Serializable {
     private String nombre;
     private static final long SerialVersionUID = 4224;
 
-    public Playlist() {
+    public Playlist(String nombre) {
+        this.nombre = nombre;
     }
 
     public ArrayList<Cancion> getLista() {
