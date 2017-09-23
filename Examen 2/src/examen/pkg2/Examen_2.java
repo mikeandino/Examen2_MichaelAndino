@@ -79,6 +79,11 @@ public class Examen_2 extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jPopupMenu2 = new javax.swing.JPopupMenu();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
+        jPopupMenu3 = new javax.swing.JPopupMenu();
+        jMenuItem13 = new javax.swing.JMenuItem();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -455,6 +460,15 @@ public class Examen_2 extends javax.swing.JFrame {
             }
         });
         jPopupMenu1.add(jMenuItem2);
+
+        jMenuItem11.setText("Agregar a PlayList");
+        jPopupMenu2.add(jMenuItem11);
+
+        jMenuItem12.setText("Agregar a favoritos");
+        jPopupMenu2.add(jMenuItem12);
+
+        jMenuItem13.setText("Album");
+        jPopupMenu3.add(jMenuItem13);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -927,22 +941,19 @@ public class Examen_2 extends javax.swing.JFrame {
             jTree1.setSelectionRow(objeto);
             Object v1 = jTree1.getSelectionPath().getLastPathComponent();
             nseleccion = (DefaultMutableTreeNode) v1;
-            if (nseleccion.getUserObject() instanceof Album) {
+            System.out.println(nseleccion.getUserObject().getClass().getSimpleName());
+            if (nseleccion.getUserObject() instanceof String) {
                 for (Album album : aa.getA()) {
-                    if (nseleccion.getUserObject().toString().equals(album.getNombre())) {
-                        selecion = true;
+                    for (Cancion cancion : album.getLista()) {
+                        if (nseleccion.getUserObject().toString().equals(album.getNombre())) {
+                            selecion = true;
+                        }
                     }
                 }
-            }else if (nseleccion.getUserObject() instanceof Cancion) {
-                for (Album album : ((DefaultMutableTreeNode)) {
-                    if (nseleccion.getUserObject().toString().equals(album.getNombre())) {
-                        selecion = true;
-                    }
+                if (selecion) {
+                    sseleccion = nseleccion.getUserObject().toString();
+                    jPopupMenu2.show(evt.getComponent(), evt.getX(), evt.getY());
                 }
-            }
-            if (selecion) {
-                selection = seleccion.getUserObject().toString();
-                jPopupMenu1.show(evt.getComponent(), evt.getX(), evt.getY());
             }
         }
     }//GEN-LAST:event_jTree2MouseReleased
@@ -1072,6 +1083,9 @@ public class Examen_2 extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -1090,6 +1104,8 @@ public class Examen_2 extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JPopupMenu jPopupMenu2;
+    private javax.swing.JPopupMenu jPopupMenu3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
